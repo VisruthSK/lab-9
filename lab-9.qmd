@@ -1,0 +1,30 @@
+---
+title: "Lab 9"
+author: "Visruth"
+embed-resources: true
+warning: false
+code-fold: true
+---
+
+# Polar Moon
+
+```{r}
+library(tidyverse)
+
+penguins |>
+  drop_na() |>
+  ggplot(aes(x = bill_len, y = flipper_len, color = species)) +
+  geom_point(size = 3) +
+  geom_point(size = 1, color = "black", alpha = 0.3) +
+  coord_polar() +
+  theme_void() +
+  scale_color_brewer() +
+  theme(legend.position = "none")
+```
+
+Penguins huddle tight in the arctic as chilly winds softly breath cold whispers into blue-black ears. _Polar Moon_ is a representation of the trials and tribulations of the arctic, serving as a reminder of the harshness of the outdoors and the warmth of community. The penguins queue into crescents, swaddling their kin--though a few rogues rough it alone--together they will suffer through the unforgiving night. 
+
+The code is very simple, using basic `ggplot` functions and the `penguins` dataset, recently added to base R.
+
+# TITLE 2
+
